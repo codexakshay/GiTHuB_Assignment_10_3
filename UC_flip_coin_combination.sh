@@ -18,7 +18,6 @@ ht_c=0
 th=10
 th_c=0
 
-
 hhh=000
 ttt=111
 
@@ -95,7 +94,6 @@ then
 fi
 
 
-
 #HHT
 if [[ $flipc == *"$hht"* ]]
 then
@@ -103,3 +101,160 @@ then
         dict[HHT]=$hht_c
 fi
 
+#HTT
+if [[ $flipc == *"$htt"* ]]
+then
+        htt_c=$(($htt_c+1))
+        dict[HTT]=$htt_c
+fi
+
+#TTH
+if [[ $flipc == *"$tth"* ]]
+then
+        tth_c=$(($tth_c+1))
+        dict[TTH]=$tth_c
+fi
+
+#THH
+if [[ $flipc == *"$thh"* ]]
+then
+        thh_c=$(($thh_c+1))
+        dict[THH]=$thh_c
+fi
+
+#THT
+if [[ $flipc == *"$tht"* ]]
+then
+        tht_c=$(($tht_c+1))
+        dict[THT]=$tht_c
+fi
+
+#HTH
+if [[ $flipc == *"$hth"* ]]
+then
+        hth_c=$(($hth_c+1))
+        dict[HTH]=$hth_c
+fi
+done
+
+echo
+
+echo "H : "${dict[H]}
+echo "T : "${dict[T]}
+
+echo
+
+echo "HH : "${dict[HH]}
+echo "TT : "${dict[TT]}
+echo "HT : "${dict[HT]}
+echo "TH : "${dict[TH]}
+
+echo
+
+echo -e "\n\nHHH : "${dict[HHH]}
+echo -e "TTT : "${dict[TTT]}
+
+echo -e "\n\nHHT : "${dict[HHT]}
+echo -e "HTT : "${dict[HTT]}
+
+echo -e "\n\nTTH : "${dict[TTH]}
+echo -e "THH : "${dict[THH]}
+
+echo -e "\n\nTHT : "${dict[THT]}
+echo -e "HTH : "${dict[HTH]}
+
+
+
+
+max=9
+if [ $h_c -gt $max ]
+then
+ max_p="H"
+ max=$h_c
+
+elif [ $t_c -gt $max ]
+then
+ max_p="T"
+ max=$t_c
+
+
+
+
+
+elif [ $hh_c -gt $max ]
+then
+ max_p="HH"
+ max=$hh_c
+
+elif [ $tt_c -gt $max ]
+then
+ max_p="TT"
+ max=$tt_c
+
+elif [ $ht_c -gt $max ]
+then
+ max_p="HT"
+ max=$ht_c
+
+elif [ $th_c -gt $max ]
+then
+ max_p="TH"
+ max=$th_c
+
+
+
+
+
+elif [ $hhh_c -gt $max ]
+then
+ max_p="HHH"
+ max=$hhh_c
+
+elif [ $ttt_c -gt $max ]
+then
+ max_p="TTT"
+ max=$ttt_c
+
+
+
+
+elif [ $hht_c -gt $max ]
+then
+ max_p="HHT"
+ max=$hht_c
+
+elif [ $htt_c -gt $max ]
+then
+ max_p="HTT"
+ max=$htt_c
+
+
+
+
+elif [ $tth_c -gt $max ]
+then
+ max_p="TTH"
+ max=$tth_c
+
+elif [ $thh_c -gt $max ]
+then
+ max_p="THH"
+ max=$thh_c
+
+
+
+
+elif [ $tht_c -gt $max ]
+then
+ max_p="THT"
+ max=$tht_c
+
+elif [ $hth_count -gt $max ]
+then
+ max_p="HTH"
+ max=$hth_c
+
+
+
+fi
+echo -e "\nMAX IS $max_p : $max TIMES "
