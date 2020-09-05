@@ -18,12 +18,29 @@ ht_c=0
 th=10
 th_c=0
 
-for ((i=1;i<=10;i++))
+
+hhh=000
+ttt=111
+
+hht=001
+htt=011
+
+tth=110
+thh=100
+
+tht=101
+hth=010
+
+
+
+for ((i=1;i<=80;i++))
 do
 
 flip1=`shuf -i 0-1 -n 1`
 flip2=`shuf -i 0-1 -n 1`
+flip3=`shuf -i 0-1 -n 1`
 
+flipc="$flip1$flip2$flip3"
 flipa="$flip1"
 flipb="$flip1$flip2"
 
@@ -38,6 +55,7 @@ if [[ $flipa == *"$t"* ]]; then
         t_c=$(($t_c+1))
         dict[T]=$t_c
 fi
+
 
 #HH
 if [[ $flipb == *"$hh"* ]]; then
@@ -62,18 +80,26 @@ then
         th_c=$(($th_c+1))
         dict[TH]=$th_c
 fi
-done
-echo
 
-echo "H : "${dict[H]}
-echo "T : "${dict[T]}
+#HHH
+if [[ $flipc == *"$hhh"* ]]; then
+        hhh_c=$(($hhh_c+1))
+        dict[HHH]=$hhh_c
+fi
 
-echo
+#TTT
+if [[ $flipc == *"$ttt"* ]]
+then
+        ttt_c=$(($ttt_c+1))
+        dict[TTT]=$ttt_c
+fi
 
-echo "HH : "${dict[HH]}
-echo "TT : "${dict[TT]}
-echo "HT : "${dict[HT]}
-echo "TH : "${dict[TH]}
 
-echo
+
+#HHT
+if [[ $flipc == *"$hht"* ]]
+then
+        hht_c=$(($hht_c+1))
+        dict[HHT]=$hht_c
+fi
 
